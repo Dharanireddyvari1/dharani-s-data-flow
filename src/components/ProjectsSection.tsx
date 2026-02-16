@@ -45,8 +45,9 @@ const ProjectsSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="projects" className="py-20">
-      <div ref={ref} className="mx-auto max-w-4xl px-4">
+    <section id="projects" className="py-20 section-gradient-1 relative">
+      <div className="absolute inset-0 mesh-gradient opacity-50" />
+      <div ref={ref} className="mx-auto max-w-4xl px-4 relative z-10">
         <h2 className={`mb-10 text-3xl font-bold text-foreground transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           Projects
         </h2>

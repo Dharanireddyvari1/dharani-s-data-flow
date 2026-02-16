@@ -36,8 +36,9 @@ const CaseStudySection = () => {
   const { ref: calloutRef, isVisible: calloutVisible } = useScrollReveal(0.2);
 
   return (
-    <section id="case-study" className="py-20">
-      <div ref={ref} className="mx-auto max-w-4xl px-4">
+    <section id="case-study" className="py-20 section-gradient-3 relative">
+      <div className="absolute inset-0 mesh-gradient opacity-40" />
+      <div ref={ref} className="mx-auto max-w-4xl px-4 relative z-10">
         <h2 className={`mb-2 text-3xl font-bold text-foreground transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           Case Study
         </h2>
