@@ -10,8 +10,9 @@ const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="contact" className="py-20">
-      <div ref={ref} className="mx-auto max-w-2xl px-4 text-center">
+    <section id="contact" className="py-20 section-gradient-3 relative">
+      <div className="absolute inset-0 mesh-gradient opacity-50" />
+      <div ref={ref} className="mx-auto max-w-2xl px-4 text-center relative z-10">
         <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <h2 className="mb-3 text-3xl font-bold text-foreground">Let's Connect</h2>
           <p className="mb-8 text-lg text-primary">

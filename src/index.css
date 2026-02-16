@@ -35,32 +35,32 @@
   }
 
   .dark {
-    --background: 220 20% 7%;
+    --background: 225 25% 12%;
     --foreground: 210 20% 92%;
-    --card: 220 18% 10%;
+    --card: 228 22% 16%;
     --card-foreground: 210 20% 92%;
-    --popover: 220 18% 10%;
+    --popover: 228 22% 16%;
     --popover-foreground: 210 20% 92%;
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 16% 16%;
+    --secondary: 230 20% 22%;
     --secondary-foreground: 210 20% 92%;
-    --muted: 220 16% 16%;
-    --muted-foreground: 215 15% 55%;
-    --accent: 217 91% 60%;
+    --muted: 230 18% 20%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 262 80% 65%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 20% 92%;
-    --border: 220 16% 18%;
-    --input: 220 16% 18%;
+    --border: 228 18% 22%;
+    --input: 228 18% 22%;
     --ring: 217 91% 60%;
-    --sidebar-background: 220 20% 7%;
+    --sidebar-background: 225 25% 12%;
     --sidebar-foreground: 210 20% 92%;
     --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent: 230 20% 22%;
     --sidebar-accent-foreground: 210 20% 92%;
-    --sidebar-border: 220 16% 18%;
+    --sidebar-border: 228 18% 22%;
     --sidebar-ring: 217 91% 60%;
   }
 }
@@ -92,6 +92,21 @@
   }
   .hover-lift:hover {
     @apply -translate-y-1;
+  }
+  .section-gradient-1 {
+    background: linear-gradient(135deg, hsl(225 25% 12%) 0%, hsl(240 30% 16%) 50%, hsl(260 25% 14%) 100%);
+  }
+  .section-gradient-2 {
+    background: linear-gradient(135deg, hsl(260 25% 14%) 0%, hsl(225 25% 12%) 50%, hsl(200 30% 14%) 100%);
+  }
+  .section-gradient-3 {
+    background: linear-gradient(180deg, hsl(200 30% 14%) 0%, hsl(230 25% 15%) 100%);
+  }
+  .mesh-gradient {
+    background: 
+      radial-gradient(ellipse at 20% 50%, hsl(217 91% 60% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(262 80% 65% / 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, hsl(180 60% 50% / 0.05) 0%, transparent 50%);
   }
 }
 

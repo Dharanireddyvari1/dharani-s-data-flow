@@ -19,8 +19,9 @@ const SkillsSection = () => {
   const displayedCategories = activeFilter ? [activeFilter] : allCategories;
 
   return (
-    <section id="skills" className="py-20">
-      <div ref={ref} className="mx-auto max-w-4xl px-4">
+    <section id="skills" className="py-20 section-gradient-2 relative">
+      <div className="absolute inset-0 mesh-gradient opacity-40" />
+      <div ref={ref} className="mx-auto max-w-4xl px-4 relative z-10">
         <h2 className={`mb-8 text-3xl font-bold text-foreground transition-all duration-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           Skills
         </h2>
