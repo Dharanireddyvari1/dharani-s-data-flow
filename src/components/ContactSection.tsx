@@ -1,10 +1,10 @@
 import { Mail, Linkedin, Github, Download } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const RESUME_URL = "#resume-placeholder";
-const LINKEDIN_URL = "#linkedin-placeholder";
-const GITHUB_URL = "#github-placeholder";
-const EMAIL = "mailto:dharani@example.com";
+const RESUME_URL = "/public/DataEngineer_resume.pdf";
+const LINKEDIN_URL = "https://www.linkedin.com/in/dharani-reddyvari-9952951b2/";
+const GITHUB_URL = "https://github.com/Dharanireddyvari1/Profile";
+const EMAIL = "mailto:reddyvaridharani05@gmail.com";
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal(0.15);

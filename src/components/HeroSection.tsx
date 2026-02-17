@@ -42,16 +42,16 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
-            <a href={RESUME_URL} className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-primary-foreground hover-glow hover-lift">
+            <a href="/DataEngineer_resume.pdf" className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-primary-foreground hover-glow hover-lift">
               <Download size={16} /> Download Resume
             </a>
-            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
+            <a href="https://www.linkedin.com/in/dharani-reddyvari-9952951b2/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
               <Linkedin size={16} /> LinkedIn
             </a>
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
+            <a href="https://github.com/Dharanireddyvari1/Profile" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
               <Github size={16} /> GitHub
             </a>
-            <a href={EMAIL} className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
+            <a href="mailto:reddyvaridharani05@gmail.com" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
               <Mail size={16} /> Email
             </a>
           </div>

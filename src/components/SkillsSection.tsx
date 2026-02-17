@@ -2,12 +2,15 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const categories: Record<string, string[]> = {
-  Languages: ["Python", "SQL", "Scala"],
-  Processing: ["Spark", "PySpark", "Spark SQL"],
-  Orchestration: ["Airflow"],
-  Platforms: ["Snowflake", "AWS S3", "AWS Athena", "AWS EMR Serverless", "AWS Glue"],
-  Databases: ["Postgres", "MySQL", "Redshift"],
-  DevOps: ["Linux", "Git", "Jenkins"],
+  Languages: ["Python", "SQL", "R"],
+  Processing: ["Apache Spark", "PySpark", "Spark SQL", "Batch ETL", "Data Transformation", "Data Validation", "Schema Enforcement"],
+  Orchestration: ["Apache Airflow", "TaskFlow API", "DAG Design", "Workflow Dependency Management"],
+  Platforms: ["Snowflake", "Amazon S3", "AWS Athena", "AWS EMR Serverless", "AWS Glue"],
+  Databases: ["PostgreSQL", "MySQL"],
+  WebEngineering: ["HTTP Requests", "REST APIs", "Proxy Rotation", "BeautifulSoup", "Bot Detection Handling"],
+  MachineLearning: ["TensorFlow", "OpenCV", "Image Classification", "Image Preprocessing"],
+  Analytics: ["Exploratory Data Analysis", "Linear Mixed Models", "Hypothesis Testing", "Feature Engineering"],
+  DevOps: ["Git", "Bitbucket", "Jenkins", "Linux", "Docker", "Excel"],
 };
 
 const allCategories = Object.keys(categories);

@@ -14,30 +14,30 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Airbnb Spark Pipeline",
-    description: "PySpark batch transformation pipeline producing analytics-ready outputs from raw listing data.",
-    tags: ["PySpark", "Spark SQL", "Batch ETL", "Analytics"],
-    github: "#github-airbnb-placeholder",
-    readme: "#readme-airbnb-placeholder",
-    highlights: [
-      "PySpark batch transformations with complex joins and aggregations across multiple data sources",
-      "Spark SQL for analytics-ready output generation with optimized partitioning",
-      "Automated data quality checks integrated into the pipeline flow",
-      "Scalable architecture supporting incremental and full-load processing modes",
-    ],
+  title: "Airbnb Distributed Batch ETL – PySpark",
+  description: "Distributed PySpark batch pipeline transforming raw Airbnb listings and reviews into analytics-ready datasets with scalable joins, aggregations, and sentiment enrichment.",
+  tags: ["PySpark", "Spark SQL", "Distributed Processing", "Batch ETL"],
+  github: "https://github.com/Dharanireddyvari1/airbnb-spark-pipeline",
+  readme: "https://github.com/Dharanireddyvari1/airbnb-spark-pipeline#readme",
+  highlights: [
+    "Designed modular ETL stages (ingestion → transformation → aggregation → output) for reproducible distributed execution",
+    "Implemented complex joins, window functions, and partition-optimized Spark SQL aggregations",
+    "Applied lightweight sentiment analysis on review text to enrich structured analytics outputs",
+    "Generated analytics-ready datasets optimized for downstream reporting and warehouse loading"
+  ]
   },
   {
-    title: "Airflow Data Validation Pipeline",
-    description: "Apache Airflow pipeline using TaskFlow API for automated data validation and anomaly detection.",
-    tags: ["Airflow", "TaskFlow API", "Python", "Data Quality"],
-    github: "#github-airflow-placeholder",
-    readme: "#readme-airflow-placeholder",
-    highlights: [
-      "TaskFlow API for clean, Pythonic DAG definitions with automatic dependency resolution",
-      "Execution context management for parameterized validation runs",
-      "Anomaly detection output with configurable thresholds and alerting",
-      "Comprehensive validation suite covering schema, completeness, and business rule checks",
-    ],
+  title: "Airflow-Orchestrated Data Validation Framework",
+  description: "Apache Airflow pipeline using TaskFlow API to orchestrate automated data validation, anomaly detection, and rule-based quality enforcement.",
+  tags: ["Airflow", "TaskFlow API", "Python", "Data Quality"],
+  github: "https://github.com/Dharanireddyvari1/airflow-data-validation",
+  readme: "https://github.com/Dharanireddyvari1/airflow-data-validation#readme",
+  highlights: [
+    "Built DAG-based validation orchestration with task dependency management and parameterized execution",
+    "Implemented schema, completeness, and business-rule validation checks with configurable thresholds",
+    "Integrated anomaly detection logic with retry policies and structured logging",
+    "Designed modular validation framework supporting reusable, production-style batch runs"
+  ]
   },
 ];
 
