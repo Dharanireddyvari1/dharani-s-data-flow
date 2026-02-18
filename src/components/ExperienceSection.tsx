@@ -42,7 +42,7 @@ const roles: Role[] = [
   {
     company: "Roots Industries",
     title: "Data Analyst Intern",
-    period: "Dec 2020 – Jan 2021",
+    period: "Dec 2020 – Jun 2021",
     tags: ["Excel", "SQL", "Data Analysis"],
     bullets: [
       "Analyzed manufacturing process datasets to identify downtime drivers and operational bottlenecks, contributing to ~15% reduction in production delays.",
