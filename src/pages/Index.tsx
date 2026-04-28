@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import ExperienceSection from "@/components/ExperienceSection";
+import HeroSection from "@/components/HeroSection_old";
+import ExperienceSection from "@/components/ExperienceSection_old";
 import CaseStudySection from "@/components/CaseStudySection";
 import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
+import SkillsSection from "@/components/SkillsSection_old";
 import ContactSection from "@/components/ContactSection";
 
 const Index = () => {

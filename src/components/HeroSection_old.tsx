@@ -2,6 +2,11 @@ import { Download, Linkedin, Github, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 
+const RESUME_URL = "#resume-placeholder";
+const LINKEDIN_URL = "#linkedin-placeholder";
+const GITHUB_URL = "#github-placeholder";
+const EMAIL = "mailto:dharani@example.com";
+
 const HeroSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
 
@@ -28,43 +33,25 @@ const HeroSection = () => {
             Dharani Reddyvari
           </h1>
           <p className="mb-4 text-lg font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent sm:text-xl">
-            Data Engineer & AI Developer · ETL Pipelines · LLM-Powered Intelligence · GCP & AWS
+            Data Engineer | Production ETL Pipelines | Spark + Airflow + Snowflake
           </p>
           <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Building end-to-end data pipelines and LLM-driven intelligence workflows across patent research,
-            e-commerce analytics, and regulated document processing. Currently at{" "}
-            <span className="text-primary font-medium">PatentGap AI</span> — engineering Gemini-powered patent
-            intelligence pipelines with multi-source scraping and structured AI extraction.
+            Data Engineer with 3+ years building Python/SQL ETL pipelines for high-volume e-commerce analytics,
+            focused on reliability, data quality, and scalable batch processing.
           </p>
 
           {/* CTA Buttons */}
           <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="/DataEngineer_resume.pdf"
-              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-primary-foreground hover-glow hover-lift"
-            >
+            <a href="/DataEngineer_resume.pdf" className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-primary-foreground hover-glow hover-lift">
               <Download size={16} /> Download Resume
             </a>
-            <a
-              href="https://www.linkedin.com/in/dharani-reddyvari-9952951b2/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift"
-            >
+            <a href="https://www.linkedin.com/in/dharani-reddyvari-9952951b2/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
               <Linkedin size={16} /> LinkedIn
             </a>
-            <a
-              href="https://github.com/Dharanireddyvari1/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift"
-            >
+            <a href="https://github.com/Dharanireddyvari1/Profile" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
               <Github size={16} /> GitHub
             </a>
-            <a
-              href="mailto:reddyvaridharani05@gmail.com"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift"
-            >
+            <a href="mailto:reddyvaridharani05@gmail.com" className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-foreground hover-glow hover-lift">
               <Mail size={16} /> Email
             </a>
           </div>
@@ -80,7 +67,7 @@ const HeroSection = () => {
           {[
             { value: `25K–${(stat1 / 1000).toFixed(0)}K`, label: "URLs / batch", color: "from-primary to-primary" },
             { value: `~${(stat2 / 1000).toFixed(0)}K`, label: "SKU records / run", color: "from-accent to-primary" },
-            { value: `~${stat3}%`, label: "pipeline SLA target", color: "from-primary to-accent" },
+            { value: `~${stat3}%`, label: "success target", color: "from-primary to-accent" },
           ].map((stat, i) => (
             <div key={i} className="rounded-lg border border-border bg-card/40 backdrop-blur-sm px-4 py-5 hover-lift transition-all duration-300 hover:border-primary/40">
               <p className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>{stat.value}</p>

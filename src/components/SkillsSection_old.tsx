@@ -2,18 +2,15 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const categories: Record<string, string[]> = {
-  Languages: ["Python", "SQL", "PySpark", "Bash", "R"],
-  "Web Scraping": ["Selenium", "BeautifulSoup", "Scrapy", "Playwright", "Requests", "HTML Parsing", "JSON/XHR Extraction", "Chrome DevTools", "Proxy Rotation", "Bot Detection Bypass"],
-  "Data Engineering": ["ETL / ELT Pipelines", "Batch Processing", "Data Cleaning", "Transformation", "Anonymization & Masking", "Schema Validation", "Deduplication", "SLA Monitoring", "Structured Logging"],
-  GCP: ["BigQuery", "Cloud Storage", "Dataproc", "Cloud Composer", "Cloud Run", "Pub/Sub", "CloudSQL", "Cloud Spanner"],
-  AWS: ["Amazon S3", "AWS EMR Serverless", "AWS Glue Catalog", "AWS Athena", "IAM"],
-  Orchestration: ["Apache Airflow", "TaskFlow API", "DAG Design", "Retry Logic", "Workflow Dependency Management"],
-  Distributed: ["Apache Spark", "PySpark", "Spark SQL", "Window Functions", "Partition Optimization"],
-  Databases: ["Snowflake", "PostgreSQL", "MySQL", "BigQuery", "dbt"],
-  "APIs & Dev": ["REST APIs", "Flask", "Postman", "JSON Payload Validation", "Internal & External APIs"],
-  "AI / LLM": ["Gemini (LLM)", "Pydantic Structured Outputs", "RAG", "NLP", "Document Intelligence", "Chunking", "Embeddings", "Metadata Extraction"],
-  "ML & Vision": ["TensorFlow", "OpenCV", "Image Classification", "Image Preprocessing"],
-  DevOps: ["Git", "GitHub", "Docker", "Jenkins", "Linux", "CI/CD", "JIRA"],
+  Languages: ["Python", "SQL", "R"],
+  Processing: ["Apache Spark", "PySpark", "Spark SQL", "Batch ETL", "Data Transformation", "Data Validation", "Schema Enforcement"],
+  Orchestration: ["Apache Airflow", "TaskFlow API", "DAG Design", "Workflow Dependency Management"],
+  Platforms: ["Snowflake", "Amazon S3", "AWS Athena", "AWS EMR Serverless", "AWS Glue"],
+  Databases: ["PostgreSQL", "MySQL"],
+  WebEngineering: ["HTTP Requests", "REST APIs", "Proxy Rotation", "BeautifulSoup", "Bot Detection Handling"],
+  MachineLearning: ["TensorFlow", "OpenCV", "Image Classification", "Image Preprocessing"],
+  Analytics: ["Exploratory Data Analysis", "Linear Mixed Models", "Hypothesis Testing", "Feature Engineering"],
+  DevOps: ["Git", "Bitbucket", "Jenkins", "Linux", "Docker", "Excel"],
 };
 
 const allCategories = Object.keys(categories);
@@ -64,7 +61,7 @@ const SkillsSection = () => {
           {displayedCategories.flatMap((cat) =>
             categories[cat].map((skill) => (
               <div
-                key={`${cat}-${skill}`}
+                key={skill}
                 className="group rounded-lg border border-border bg-card px-4 py-3 text-center text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:-translate-y-0.5 animate-scale-in"
               >
                 <span className="text-xs text-muted-foreground block mb-0.5">{cat}</span>

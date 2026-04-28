@@ -10,33 +10,48 @@ interface Role {
   tags: string[];
   bullets: string[];
   defaultOpen?: boolean;
+  isCurrent?: boolean;
 }
 
 const roles: Role[] = [
   {
-    company: "Dentsu Global Services",
-    title: "Software Data Engineer",
-    period: "Dec 2022 – Jul 2024",
-    tags: ["Python", "SQL", "Snowflake", "ETL Pipelines", "Web Data Ingestion", "Data Quality", "Git", "Jenkins"],
+    company: "PatentGap AI",
+    title: "AI Developer — Patent Intelligence & LLM Pipelines",
+    period: "Mar 2026 – Present",
+    isCurrent: true,
     defaultOpen: true,
+    tags: ["Gemini (LLM)", "Python", "Flask", "Pydantic", "Web Scraping", "USPTO API", "Google Patents", "Structured JSON", "NLP"],
     bullets: [
-      "Built Python + SQL ETL pipelines across 13+ global client projects (LVMH, Meta, Home Depot, etc.), loading data into Snowflake; improved data readiness by ~30% and reduced manual effort by 60%",
-      "Implemented data quality checks: null checks, schema validation, and variant consistency checks across ~300K SKU records per run",
-      "Managed CI/CD delivery with Jenkins + Git/Bitbucket for reliable production deployments",
-      "Troubleshot production issues including bot detection (403s), request timeouts, and recrawls; maintained ~95% success target",
-      "Coordinated with cross-functional teams to align data pipelines with downstream analytics and reporting needs",
+      "Enhanced LLM-driven patent intelligence workflows that extract structured patent metadata from USPTO APIs, Google Patents, and Free Patents Online fallback scrapers, enabling multi-source data collection at scale.",
+      "Used Pydantic-style structured outputs to validate Gemini-extracted patent fields — titles, claims, identifiers, inventors, applicants/assignees, dates, and source metadata — before database insertion, ensuring data integrity across the pipeline.",
+      "Tested and debugged Flask API flows for patent import, claims extraction, infringement analysis, and live similarity analysis across multi-source patent data pipelines.",
+      "Improved patent ID handling and fallback logic by identifying format issues where USPTO accepts limited application-number formats while Google Patents and Free Patents Online handle broader patent and publication IDs.",
+      "Engineered Gemini-based prompts for metadata extraction, claims isolation, patent summarization, infringement comparison, and structured JSON generation for downstream analysis workflows.",
+    ],
+  },
+  {
+    company: "AbbVie",
+    title: "AI / GenAI Engineer — Data Systems & Document Intelligence",
+    period: "Aug 2025 – Jan 2026",
+    tags: ["Python", "PySpark", "RAG", "NLP", "AWS", "Docker", "CI/CD", "Document Intelligence", "Data Validation"],
+    bullets: [
+      "Designed and optimized end-to-end Python- and PySpark-based preprocessing pipelines for structured and unstructured clinical and regulatory documents, supporting parsing, chunking, metadata extraction, validation, and downstream GenAI workflows.",
+      "Prepared raw document data for analysis through cleaning, transformation, anonymization, and masking, ensuring compliance with data governance standards in a regulated environment.",
+      "Supported RAG and NLP-based document intelligence use cases; implemented data validation, monitoring, and performance tracking to improve reliability and traceability across ML pipelines.",
+      "Deployed containerized workloads on AWS using Docker and CI/CD; collaborated with ML engineers and data scientists to translate document intelligence requirements into scalable data workflows.",
     ],
   },
   {
     company: "Dentsu Global Services",
-    title: "Data Analyst",
-    period: "Jan 2022 – Dec 2022",
-    tags: ["Python", "OpenCV", "Tensorflow", "Image Processing", "Data Validation", "Computer Vision"],
+    title: "Software Data Engineer — Web Data Pipelines & Cloud ETL",
+    period: "Jan 2022 – Jul 2024",
+    tags: ["Python", "SQL", "PySpark", "Snowflake", "Airflow", "Selenium", "BeautifulSoup", "AWS S3", "ETL Pipelines", "Data Quality", "Git", "Jenkins"],
     bullets: [
-      "Built an automated image ingestion pipeline using Python and OpenCV to extract sneaker product images from e-commerce sources based on provided product IDs, curating structured datasets for ML training.",
-      "Developed and trained TensorFlow-based image classification models to detect right-tilted sneaker orientation and plain white background compliance, standardizing product listing quality.",
-      "Implemented preprocessing and validation workflows (background filtering, orientation detection, noise removal), reducing non-compliant images by ~30–35% and improving dataset consistency by ~40%",
-      "Collaborated with product and analytics teams to translate visual quality requirements into measurable model criteria and performance reports.",
+      "Built Python-, SQL-, and PySpark-based web data ingestion pipelines for 13+ global retail clients, processing 25K–40K URLs per batch and ~300K SKU records weekly while maintaining ~95% SLA adherence through validation, monitoring, and recovery workflows.",
+      "Developed scraping and crawler workflows using Selenium, BeautifulSoup, Playwright, and JSON/XHR extraction patterns; reverse-engineered web sources via Chrome DevTools, XHR tracing, cookies, and headers to bypass bot restrictions and pagination.",
+      "Designed PySpark and Spark SQL transformation workflows to standardize semi-structured data, normalize product variants, enforce schema checks, remove duplicates, and prepare curated datasets for BI and analytics.",
+      "Loaded curated datasets into AWS (S3, EMR Serverless, Glue Catalog, Athena) and Snowflake, supporting scalable warehouse ingestion; orchestrated pipelines via Apache Airflow with retry logic and structured failure reporting.",
+      "Implemented data quality checks for nulls, duplicates, price sanity, schema drift, and payload inconsistencies; built OpenCV- and TensorFlow-supported image validation workflows, improving dataset consistency by ~40%.",
     ],
   },
   {
@@ -80,15 +95,23 @@ const TimelineItem = ({ role, index, isVisible }: { role: Role; index: number; i
       className={`relative mb-10 last:mb-0 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Timeline dot */}
-      <div className="absolute -left-[calc(2rem+5px)] top-1 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+      {/* Timeline dot — pulsing for current role */}
+      <div className={`absolute -left-[calc(2rem+5px)] top-1 h-3 w-3 rounded-full border-2 border-primary bg-background ${role.isCurrent ? "ring-2 ring-primary/30 ring-offset-1" : ""}`} />
 
       <button
         onClick={() => setOpen(!open)}
         className="flex w-full items-start justify-between text-left group"
       >
         <div>
-          <h3 className="text-lg font-semibold text-foreground">{role.company}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground">{role.company}</h3>
+            {role.isCurrent && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary border border-primary/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                Current
+              </span>
+            )}
+          </div>
           <p className="text-sm font-medium text-primary">{role.title}</p>
           <p className="text-xs text-muted-foreground">{role.period}</p>
         </div>
@@ -99,7 +122,7 @@ const TimelineItem = ({ role, index, isVisible }: { role: Role; index: number; i
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-400 ${open ? "max-h-[600px] opacity-100 mt-3" : "max-h-0 opacity-0"}`}
+        className={`overflow-hidden transition-all duration-400 ${open ? "max-h-[700px] opacity-100 mt-3" : "max-h-0 opacity-0"}`}
       >
         <div className="mb-3 flex flex-wrap gap-1.5">
           {role.tags.map((tag) => (
